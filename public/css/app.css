@@ -10480,6 +10480,10 @@ h3 {
   line-height: 1.5;
 }
 
+a {
+  color: #ed6009;
+}
+
 .b-navigation-bar {
   background-image: linear-gradient(271deg, #5862ec, #ed6009);
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -10531,6 +10535,10 @@ h3 {
   border-radius: 2rem;
 }
 
+.b-news {
+  margin: 20px 0;
+}
+
 .b-news__title {
   font-size: 1.5em;
 }
@@ -10542,11 +10550,12 @@ h3 {
   float: left;
   width: 100%;
   padding: 10px 0;
+  border-top: 10px solid #2a37e7;
 }
 
 .b-news__day {
   display: block;
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 .b-news__month {
@@ -10558,8 +10567,53 @@ h3 {
   display: block;
 }
 
+.b-news__place {
+  color: #7b7b7b;
+  letter-spacing: 1px;
+}
+
 .b-news__summary {
   font-size: 0.8em;
+  margin-top: 10px;
+  color: #626262;
+}
+
+.b-schedule-item {
+  margin: 20px 0;
+  border: 2px solid #2a37e7;
+}
+
+.b-schedule-item__title {
+  margin-top: 20px;
+  padding: 0 20px;
+  font-size: 1.5em;
+}
+
+.b-schedule-item__date {
+  background: #5862ec;
+  color: white;
+  text-align: center;
+  float: left;
+  width: 100%;
+  padding: 10px 0;
+  border-top: 10px solid #2a37e7;
+}
+
+.b-schedule-item__time {
+  display: block;
+  font-size: 1.5em;
+}
+
+.b-schedule-item__place {
+  padding: 0 20px;
+  color: #7b7b7b;
+  letter-spacing: 1px;
+}
+
+.b-schedule-item__summary {
+  padding: 0 20px;
+  font-size: 0.8em;
+  margin-top: 10px;
   color: #626262;
 }
 
