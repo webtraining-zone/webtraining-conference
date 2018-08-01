@@ -584,8 +584,8 @@ pre code {
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 10px;
+  padding-left: 10px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -616,8 +616,8 @@ pre code {
 
 .container-fluid {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 10px;
+  padding-left: 10px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -628,8 +628,8 @@ pre code {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: -10px;
+  margin-left: -10px;
 }
 
 .no-gutters {
@@ -716,8 +716,8 @@ pre code {
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .col {
@@ -5223,7 +5223,7 @@ input[type="button"].btn-block {
 }
 
 .card-deck .card {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 @media (min-width: 576px) {
@@ -5232,8 +5232,8 @@ input[type="button"].btn-block {
     -webkit-box-direction: normal;
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+    margin-right: -10px;
+    margin-left: -10px;
   }
 
   .card-deck .card {
@@ -5247,9 +5247,9 @@ input[type="button"].btn-block {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-right: 15px;
+    margin-right: 10px;
     margin-bottom: 0;
-    margin-left: 15px;
+    margin-left: 10px;
   }
 }
 
@@ -5264,7 +5264,7 @@ input[type="button"].btn-block {
 }
 
 .card-group > .card {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 @media (min-width: 576px) {
@@ -10498,10 +10498,21 @@ h3 {
 
 .b-section--dark {
   background: #5862ec;
+  color: white;
 }
 
 .b-section--highlighted {
   background: #111b9a;
+  color: white;
+}
+
+.b-footer {
+  background: black;
+  min-height: 80px;
+  color: white;
+}
+
+.b-footer a {
   color: white;
 }
 
@@ -10513,6 +10524,11 @@ h3 {
 .navbar-light .navbar-brand:hover,
 .navbar-light .navbar-nav .nav-link:hover {
   color: white;
+}
+
+.btn {
+  padding: 0.5rem 2rem;
+  border-radius: 2rem;
 }
 
 .b-news__title {
