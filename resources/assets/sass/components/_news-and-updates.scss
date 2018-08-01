@@ -1,0 +1,36 @@
+@import "../partials/variables";
+
+.b-news {
+  &__title {
+    font-size: 1.5em;
+
+  }
+
+  &__date {
+    background: $blue;
+    color: white;
+    text-align: center;
+    float: left;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  &__day {
+    display: block;
+    font-size: 2em;
+  }
+
+  &__month {
+    display: block;
+    text-transform: uppercase;
+  }
+
+  &__year {
+    display: block;
+  }
+
+  &__summary {
+    font-size: 0.8em;
+    color: lighten($dark-gray, 5%);
+  }
+}
