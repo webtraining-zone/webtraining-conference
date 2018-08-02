@@ -15,11 +15,12 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Talk::class, function (Faker $faker) {
     return [
-        'title' => $faker->name,
+        'title' => $faker->text(90),
         'slug' => $faker->slug,
         'summary' => $faker->text(255),
         'description' => $faker->text(1024),
 //        'user_id' => App\User::find(1)->id,
+//        'room_id' => App\Room::find(1)->id,
         'thumbnail' => $faker->imageUrl(400, 400),
         'image' => $faker->imageUrl(1280, 720),
         'starts_at' => $faker->dateTime,
