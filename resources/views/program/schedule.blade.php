@@ -12,7 +12,10 @@
 
                         <div class="b-schedule-item-header__date">
                             <span class="b-schedule-item-header__time">
-                                {{ $talk->starts_at }} - {{ $talk->ends_at }}
+                                {{ Carbon\Carbon::parse($talk->starts_at)->format('H:i') }}
+                                -
+                                {{ Carbon\Carbon::parse($talk->ends_at)->format('H:i') }}
+
                             </span>
                         </div>
 
@@ -29,6 +32,7 @@
                                             {{ $talk->title }}
                                         </h4>
                                     </a>
+
                                     <p>
                                         <strong>Speaker: </strong>
                                         <span class="b-schedule-item__speaker">{{ $talk->speaker->name }}</span>
