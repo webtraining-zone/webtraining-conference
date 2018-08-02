@@ -12,4 +12,9 @@ class ProgramController extends Controller
         $talks = Talk::all();
         return view('program.index')->with('talks', $talks);
     }
+
+    public function showTalk(Talk $talk)
+    {
+        return $talk;
+    }
 }

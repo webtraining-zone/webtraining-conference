@@ -27,7 +27,7 @@
                                 </div>
                                 <div class="col-8 col-sm-9 col-md-9 col-lg-10 col-xl-11">
                                     <span class="b-schedule-item__place text-uppercase">{{ $talk->room->name }}</span>
-                                    <a href="#">
+                                    <a href="{{ route('showTalk', $talk->slug) }}">
                                         <h4 class="b-schedule-item__title">
                                             {{ $talk->title }}
                                         </h4>
