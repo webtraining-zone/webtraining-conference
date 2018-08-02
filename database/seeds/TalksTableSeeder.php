@@ -11,8 +11,17 @@ class TalksTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\User::class, 2)->create()->each(function ($user) {
-            $user->talks()->save(factory(App\Talk::class)->make());
+//        factory(App\User::class, 2)->create()->each(function ($user) {
+//            $user->talks()->save(factory(App\Talk::class)->make());
+//        });
+
+        factory(App\Talk::class, 10)->make()->each(function ($talk) {
+            $user = factory(App\User::class)->create();
+            $room = factory(App\Room::class)->create();
+            $talk->speaker()->associate($user);
+            $talk->room()->associate($room);
+
+            $talk->save();
         });
     }
 }
