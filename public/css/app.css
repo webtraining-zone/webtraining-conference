@@ -10586,6 +10586,27 @@ a {
   box-shadow: 0 15px 35px rgba(50, 50, 93, 0.03), 0 5px 15px rgba(0, 0, 0, 0.06);
 }
 
+.b-schedule-item__title {
+  font-size: 1.5em;
+  margin: 5px 0;
+}
+
+.b-schedule-item__place {
+  color: #7b7b7b;
+  letter-spacing: 1px;
+  font-size: 0.7em;
+}
+
+.b-schedule-item__summary {
+  font-size: 0.9em;
+  margin-top: 10px;
+  color: #626262;
+}
+
+.b-schedule-item__speaker {
+  color: #626262;
+}
+
 .b-schedule-item-header__date {
   background: #5862ec;
   color: white;
@@ -10602,21 +10623,5 @@ a {
 
 .b-schedule-item-body {
   padding: 20px;
-}
-
-.b-schedule-item-body__title {
-  margin-top: 20px;
-  font-size: 1.5em;
-}
-
-.b-schedule-item-body__place {
-  color: #7b7b7b;
-  letter-spacing: 1px;
-}
-
-.b-schedule-item-body__summary {
-  font-size: 0.8em;
-  margin-top: 10px;
-  color: #626262;
 }
 

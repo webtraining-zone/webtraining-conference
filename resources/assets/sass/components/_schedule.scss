@@ -2,14 +2,31 @@
 
 .b-schedule-item {
   margin: 20px 0;
-  //border: 2px solid darken($blue, 10%);
-
-  //background: darken($blue, 10%);
   border-radius: 5px;
   text-align: left;
-  //color: white;
   -webkit-box-shadow: 0 15px 35px rgba(50, 50, 93, .03), 0 5px 15px rgba(0, 0, 0, .06);
   box-shadow: 0 15px 35px rgba(50, 50, 93, .03), 0 5px 15px rgba(0, 0, 0, .06);
+
+  &__title {
+    font-size: 1.5em;
+    margin: 5px 0;
+  }
+
+  &__place {
+    color: lighten($dark-gray, 15%);
+    letter-spacing: 1px;
+    font-size: 0.7em;
+  }
+
+  &__summary {
+    font-size: 0.9em;
+    margin-top: 10px;
+    color: lighten($dark-gray, 5%);
+  }
+
+  &__speaker {
+    color: lighten($dark-gray, 5%);
+  }
 }
 
 .b-schedule-item-header {
@@ -32,19 +49,4 @@
 .b-schedule-item-body {
   padding: 20px;
 
-  &__title {
-    margin-top: 20px;
-    font-size: 1.5em;
-  }
-
-  &__place {
-    color: lighten($dark-gray, 15%);
-    letter-spacing: 1px;
-  }
-
-  &__summary {
-    font-size: 0.8em;
-    margin-top: 10px;
-    color: lighten($dark-gray, 5%);
-  }
 }

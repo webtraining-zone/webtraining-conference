@@ -7,27 +7,41 @@
                 </h2>
 
                 <h3>Tuesday</h3>
-                <article class="b-schedule-item">
-                    <div class="b-schedule-item-header__date">
-                        <span class="b-schedule-item-header__time">
-                                        09:00 - 11:00
-                        </span>
-                    </div>
+                @foreach($talks as $talk)
+                    <article class="b-schedule-item">
 
-                    <div class="b-schedule-item-body">
-                        <a href="">
-                            <h4 class="b-schedule-item__title">
-                                Progressive Web Apps with React
-                            </h4>
-                        </a>
-                        <span class="b-schedule-item__place text-uppercase">Room C</span>
-                        <p class="b-schedule-item__summary">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur eum eveniet
-                            laborum laudantium suscipit. Architecto cum dolores itaque quas quasi rem tempora. Culpa
-                            eius id ipsam pariatur quos rem veniam!
-                        </p>
-                    </div>
-                </article>
+                        <div class="b-schedule-item-header__date">
+                            <span class="b-schedule-item-header__time">
+                                {{ $talk->starts_at }} - {{ $talk->ends_at }}
+                            </span>
+                        </div>
+
+                        <div class="b-schedule-item-body">
+                            <div class="row">
+                                <div class="col-4 col-sm-3 col-md-3 col-lg-2 col-xl-1">
+                                    <img src="{{ $talk->thumbnail }}" alt="{{ $talk->speaker->name }}"
+                                         class="rounded-circle img-fluid">
+                                </div>
+                                <div class="col-8 col-sm-9 col-md-9 col-lg-10 col-xl-11">
+                                    <span class="b-schedule-item__place text-uppercase">{{ $talk->room->name }}</span>
+                                    <a href="#">
+                                        <h4 class="b-schedule-item__title">
+                                            {{ $talk->title }}
+                                        </h4>
+                                    </a>
+                                    <p>
+                                        <strong>Speaker: </strong>
+                                        <span class="b-schedule-item__speaker">{{ $talk->speaker->name }}</span>
+                                    </p>
+
+                                    <p class="b-schedule-item__summary">
+                                        {{ $talk->summary }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                @endforeach
 
 
             </div>
