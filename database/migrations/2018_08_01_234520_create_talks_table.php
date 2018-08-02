@@ -19,6 +19,7 @@ class CreateTalksTable extends Migration
             $table->string('slug');
             $table->text('summary');
             $table->unsignedInteger('user_id');
+            $table->unsignedInteger('room_id');
             $table->string('thumbnail')->nullable();
             $table->string('image')->nullable();
             $table->text('description')->nullable();
@@ -28,6 +29,10 @@ class CreateTalksTable extends Migration
 
             $table->foreign('user_id')
                 ->references('id')->on('users')
+                ->onDelete('cascade');
+
+            $table->foreign('room_id')
+                ->references('id')->on('rooms')
                 ->onDelete('cascade');
         });
     }
