@@ -2,9 +2,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2 class="mb-4">{{ __('Location') }}</h2>
+                <h2 class="mb-4">{{ __('Lugar') }}</h2>
                 <p>
-                    Come to one of the iconic locations in Monterrey, Mexico and find everything you need to succeed
+                    Ven a uno de los lugares más iconicos de la ciudad de Monterrey, NL, México y encuentra todo lo necesaría para tu éxito.
                 </p>
             </div>
         </div>

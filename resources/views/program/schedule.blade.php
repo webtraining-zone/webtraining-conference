@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-12">
                 <h2>
-                    Schedule
+                    Agenda
                 </h2>
 
                 <h3>Tuesday</h3>
