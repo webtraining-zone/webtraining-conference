@@ -16,6 +16,17 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('news-component', require('./components/NewsComponent.vue'));
+
+import moment from 'moment';
+
+Vue.filter('formatDate', function (value, outputFormat) {
+    // Dates come in this format: 2018-08-03 11:00:00
+    if(!! outputFormat) {
+        return moment(value, 'YYYY-MM-DD HH:mm:ss').format(outputFormat);
+    }
+    return moment(value, 'YYYY-MM-DD HH:mm:ss').fromNow();
+});
 
 const app = new Vue({
     el: '#app'
