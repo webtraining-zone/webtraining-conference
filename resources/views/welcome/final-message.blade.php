@@ -3,11 +3,11 @@
         <div class="row">
             <div class="col-8 offset-2">
                 <h3 class="text-center pt-5 pb-4">
-                    Webtraining Conference unites experts from around the world who create profitable digital projects.
-                    Participate, learn, and be inspired.
+                    Don't hesitate to ask anything, we will provide you all the information to come to the conference
+                    and make it count. It is worth it, 100%.
                 </h3>
                 <p class="text-center mb-5">
-                    <a href="{{ url('register') }}" class="btn btn-outline-warning btn-lg">Register</a>
+                    <a href="{{ url('contact') }}" class="btn btn-outline-warning btn-lg">Contact</a>
                 </p>
 
             </div>
