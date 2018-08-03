@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-12">
                 <h2>
-                    News & Updates
+                    Noticias y avisos
                 </h2>
 
                 <div class="b-news">
@@ -23,20 +23,16 @@
                         </div>
                         <div class="col-8 col-sm-10 col-md-10 col-lg-11 col-xl-11">
                             {{--<div class="b-news__extra-information">--}}
-                            <a href="">
+                            <a href="#">
                                 <h3 class="b-news__title">
-                                    So It's Your First Time at DrupalCon
+                                    Ya está confirmada la fecha y lugar de la primera edición de Webtraining Conference
                                 </h3>
                             </a>
-                            <span class="b-news__place text-uppercase">NASHVILLE 2018</span>
+                            <span class="b-news__place text-uppercase">Monterrey, NL, México 2018</span>
                             <p class="b-news__summary">
-                                If you are getting ready to attend your first DrupalCon, here are a few ideas to help
-                                you
-                                prepare
-                                for an intense week of open source software community from @horncologne. Watch the
-                                interview
-                                video
-                                for more tips and inspiration from my Drupal friends.
+                                Prepara tus maletas, ya tenemos la sede lista para la primera edición del evento sobre
+                                la web más genial del año. Ven y aprende de muchos profesionales de la web reunidos en
+                                un mismo lugar. Sé parte de esta experiencia y aprende cómo se hacen proyectos en las grandes ligas.
                             </p>
                             {{--</div>--}}
                         </div>

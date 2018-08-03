@@ -20,11 +20,11 @@
 
                         <div class="b-schedule-item-body">
                             <div class="row">
-                                <div class="col-4 col-sm-3 col-md-3 col-lg-2 col-xl-1">
+                                <div class="col-12 col-sm-7 col-md-5 col-lg-4 col-xl-4">
                                     <img src="{{ $talk->thumbnail }}" alt="{{ $talk->speaker->name }}"
-                                         class="rounded-circle img-fluid">
+                                         class="img-fluid rounded">
                                 </div>
-                                <div class="col-8 col-sm-9 col-md-9 col-lg-10 col-xl-11">
+                                <div class="col-12 col-sm-7 col-md-7 col-lg-8 col-xl-8">
                                     <span class="b-schedule-item__place text-uppercase">{{ $talk->room->name }}</span>
                                     <a href="{{ route('showTalk', $talk->slug) }}">
                                         <h4 class="b-schedule-item__title">
@@ -33,12 +33,12 @@
                                     </a>
 
                                     <p>
-                                        <strong>Speaker: </strong>
+                                        <strong>Conferencista: </strong>
                                         <span class="b-schedule-item__speaker">{{ $talk->speaker->name }}</span>
                                     </p>
 
                                     <p class="b-schedule-item__summary">
-                                        {{ $talk->summary }}
+                                        {!!  $talk->summary  !!}
                                     </p>
                                 </div>
                             </div>

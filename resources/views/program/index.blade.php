@@ -10,8 +10,8 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
-                    <h1 class="mt-0 mt-sm-5 mt-md-5 mt-lg-5 mt-xl-5 text-center text-sm-left">{{ __('Program') }}</h1>
-                    <p class="text-center text-sm-left">Let's talk and learn</p>
+                    <h1 class="mt-0 mt-sm-5 mt-md-5 mt-lg-5 mt-xl-5 text-center text-sm-left">{{ __('Programa') }}</h1>
+                    <p class="text-center text-sm-left">Platiquemos y aprendamos</p>
                 </div>
             </div>
         </div>

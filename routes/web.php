@@ -21,3 +21,4 @@ Route::get('/program', 'ProgramController@index')->name('program');
 
 Route::get('/program/{talk}', 'ProgramController@showTalk')->name('showTalk');
 
+Route::get('/sponsors', 'SponsorsController@index')->name('sponsors');
