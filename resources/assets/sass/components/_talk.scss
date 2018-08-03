@@ -1,0 +1,9 @@
+@import "../partials/variables";
+
+.b-talk {
+  &__place {
+    //color: lighten($dark-gray, 15%);
+    letter-spacing: 1px;
+    font-size: 0.7em;
+  }
+}

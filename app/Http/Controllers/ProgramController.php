@@ -15,6 +15,6 @@ class ProgramController extends Controller
 
     public function showTalk(Talk $talk)
     {
-        return $talk;
+        return view('talks.show')->with('talk', $talk);;
     }
 }

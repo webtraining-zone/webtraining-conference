@@ -15,7 +15,6 @@
                                 {{ Carbon\Carbon::parse($talk->starts_at)->format('H:i') }}
                                 -
                                 {{ Carbon\Carbon::parse($talk->ends_at)->format('H:i') }}
-
                             </span>
                         </div>
 

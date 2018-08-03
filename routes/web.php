@@ -17,7 +17,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/program/{talk}', 'ProgramController@showTalk')->name('showTalk');
-
 Route::get('/program', 'ProgramController@index')->name('program');
+
+Route::get('/program/{talk}', 'ProgramController@showTalk')->name('showTalk');
 
