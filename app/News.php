@@ -9,6 +9,8 @@ class News extends Model
 {
     use Sluggable;
 
+    protected $connection = "mysql_news";
+
     /**
      * Return the sluggable configuration array for this model.
      *
