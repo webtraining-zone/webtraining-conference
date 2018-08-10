@@ -47,6 +47,9 @@
                         </article>
                     @endforeach
                 @endforeach
+
+                {{-- Be aware when using grouping by the pagination doesn't work --}}
+                {{--{{ $groups->links() }}--}}
             </div>
         </div>
     </div>

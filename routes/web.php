@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
+Route::get('/users', 'WelcomeController@getUsersWithRawQuery')->name('getUsersWithRawQuery');
 
 Auth::routes();
 
