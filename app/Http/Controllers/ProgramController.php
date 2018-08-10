@@ -13,6 +13,7 @@ class ProgramController extends Controller
 //        Carbon::setLocale('es_ES');
 //        setlocale(LC_TIME, "es_ES.UTF-8");
         $talks = Talk::all();
+//        $talks = Talk::paginate(5);
 
         $groups = $talks->map(function ($talk, $key) {
             $talk['day'] = Carbon::parse($talk->starts_at)->format('l');
@@ -24,6 +25,6 @@ class ProgramController extends Controller
 
     public function showTalk(Talk $talk)
     {
-        return view('talks.show')->with('talk', $talk);;
+        return view('talks.show')->with('talk', $talk);
     }
 }
