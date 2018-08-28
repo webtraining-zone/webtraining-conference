@@ -27,4 +27,14 @@ class ProgramController extends Controller
     {
         return view('talks.show')->with('talk', $talk);
     }
+
+    public function indexByAPI()
+    {
+        return Talk::all();
+    }
+
+    public function showTalkByAPI(Talk $talk)
+    {
+        return $talk;
+    }
 }
