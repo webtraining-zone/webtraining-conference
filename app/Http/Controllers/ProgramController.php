@@ -30,11 +30,11 @@ class ProgramController extends Controller
 
     public function indexByAPI()
     {
-        return Talk::all();
+        return Talk::with(['speaker', 'room'])->get();
     }
 
     public function showTalkByAPI(Talk $talk)
     {
-        return $talk;
+        return Talk::where('id', $talk->id)->with(['speaker', 'room'])->first();
     }
 }
