@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 5.7.17, for macos10.12 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.11, for macos10.13 (x86_64)
 --
 -- Host: localhost    Database: conference_db
 -- ------------------------------------------------------
@@ -7,7 +7,7 @@
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+ SET NAMES utf8mb4 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,13 +21,13 @@
 
 DROP TABLE IF EXISTS `migrations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `migrations` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +36,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(6,'2018_08_01_232116_create_rooms_table',2),(7,'2018_08_01_234520_create_talks_table',2),(9,'2018_08_03_194135_create_news_table',3);
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(6,'2018_08_01_232116_create_rooms_table',2),(7,'2018_08_01_234520_create_talks_table',2),(9,'2018_08_03_194135_create_news_table',3),(10,'2019_04_09_183850_create_sponsors_table',4);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -46,7 +46,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `news`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `news` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE `news` (
   PRIMARY KEY (`id`),
   KEY `news_user_id_foreign` (`user_id`),
   CONSTRAINT `news_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,7 +71,7 @@ CREATE TABLE `news` (
 
 LOCK TABLES `news` WRITE;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
-INSERT INTO `news` VALUES (1,'Ya está confirmada la fecha y lugar de la primera edición de Webtraining Conference','ya-esta-confirmada-la-fecha-y-lugar-de-la-primera-edicion-de-webtraining-conference','Prepara tus maletas, ya tenemos la sede lista para la primera edición del evento sobre\n                                la web más genial del año. Ven y aprende de muchos profesionales de la web reunidos en\n                                un mismo lugar. Sé parte de esta experiencia y aprende cómo se hacen proyectos en las grandes ligas.','Prepara tus maletas, ya tenemos la sede lista para la primera edición del evento sobre\n                                la web más genial del año. Ven y aprende de muchos profesionales de la web reunidos en\n                                un mismo lugar. Sé parte de esta experiencia y aprende cómo se hacen proyectos en las grandes ligas.',1,NULL,NULL,'2018-08-03 11:00:00','2018-08-03 16:00:00','2018-08-03 16:00:00');
+INSERT INTO `news` VALUES (1,'Ya está confirmada la fecha y lugar de la primera edición de Webtraining Conference','ya-esta-confirmada-la-fecha-y-lugar-de-la-primera-edicion-de-webtraining-conference','Prepara tus maletas, ya tenemos la sede lista para la primera edición del evento sobre\n                                la web más genial del año. Ven y aprende de muchos profesionales de la web reunidos en\n                                un mismo lugar. Sé parte de esta experiencia y aprende cómo se hacen proyectos en las grandes ligas.','Prepara tus maletas, ya tenemos la sede lista para la primera edición del evento sobre\n                                la web más genial del año. Ven y aprende de muchos profesionales de la web reunidos en\n                                un mismo lugar. Sé parte de esta experiencia y aprende cómo se hacen proyectos en las grandes ligas.',33,NULL,NULL,'2018-08-03 11:00:00','2018-08-03 16:00:00','2018-08-03 16:00:00'),(2,'A news about something interesting','a-news-about-something-interesting','summary','body',1,NULL,NULL,'2018-10-23 14:56:34','2018-08-11 07:14:33','2018-08-11 07:14:33');
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,7 +81,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `password_resets`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `password_resets` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -105,7 +105,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rooms`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `rooms` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -128,12 +128,43 @@ INSERT INTO `rooms` VALUES (1,'Room A','room-a','Non aut ab laboriosam tempore e
 UNLOCK TABLES;
 
 --
+-- Table structure for table `sponsors`
+--
+
+DROP TABLE IF EXISTS `sponsors`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `sponsors` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `thumbnail` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` enum('PLATINUM','GOLD','SILVER') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sponsors`
+--
+
+LOCK TABLES `sponsors` WRITE;
+/*!40000 ALTER TABLE `sponsors` DISABLE KEYS */;
+INSERT INTO `sponsors` VALUES (1,'Carbon LDP','carbonldp','Carbon is the platform we’ve always wanted.\nIt speeds up our development and\nconnects all of our data sources.','https://carbonldp.com/wp-content/uploads/2018/10/logo-official.svg','https://carbonldp.com/wp-content/uploads/2018/10/logo-official.svg','PLATINUM','2019-04-04 19:23:40','2019-04-04 19:23:40'),(2,'Webtraining World','webtraining-world','Education for the future we envision','https://webtraining.zone/img/logo-webtraining.png','https://webtraining.zone/img/logo-webtraining.png','GOLD','2019-04-02 19:23:40','2019-04-02 19:23:40');
+/*!40000 ALTER TABLE `sponsors` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `talks`
 --
 
 DROP TABLE IF EXISTS `talks`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `talks` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -162,7 +193,7 @@ CREATE TABLE `talks` (
 
 LOCK TABLES `talks` WRITE;
 /*!40000 ALTER TABLE `talks` DISABLE KEYS */;
-INSERT INTO `talks` VALUES (1,'Observables con JavaScript','observables-con-javascript','¿Así que has escuchado hablar sobre programación reactiva pero el concepto no te ha quedado claro? ¿Te gustaría saber cuál es la diferencia entre una Promesa y un Observable? ¿Quisieras comprender cómo Angular hace uso de los famosos streams?',33,1,'/img/talks/observables-javascript.jpg','/img/talks/observables-javascript.jpg','¿Así que has escuchado hablar sobre programación reactiva pero el concepto no te ha quedado claro? ¿Te gustaría saber cuál es la diferencia entre una Promesa y un Observable? ¿Quisieras comprender cómo Angular hace uso de los famosos streams?','1986-03-13 15:03:03','2000-10-10 06:18:33','2018-08-03 04:07:03','2018-08-03 04:07:03'),(2,'Herramientas Profesionales para Desarrollo Front-end','herramientas-profesionales-para-desarrollo-front-end','¿Has escuchado hablar de compresión de código fuente, compilación, pre-procesadores, optimización de imágenes y cosas por el estilo? Pues bien, durante este curso aprenderás las herramientas preferidas por los desarrolladores front-end profesionales, Gulp.js, NPM, Bower, Uglify y mucho mucho más.',34,2,'/img/talks/event-herramientas-profesionales.jpg','/img/talks/event-herramientas-profesionales.jpg','<p>&iquest;Has escuchado hablar de compresi&oacute;n de c&oacute;digo fuente, compilaci&oacute;n, pre-procesadores, optimizaci&oacute;n de im&aacute;genes y cosas por el estilo? Pues bien, durante este curso aprender&aacute;s las herramientas preferidas por los desarrolladores front-end profesionales, Gulp.js, NPM, Bower, Uglify y mucho mucho m&aacute;s.</p>','1981-09-24 13:55:17','2011-12-03 03:06:58','2018-08-03 04:07:03','2018-08-03 04:07:03'),(3,'Datos Estructurados para SEO','datos-estructurados-para-seo','¿Te has preguntado cómo le hacen los buscadores para encontrar información? ¿cómo podrías enriquecer tu sitio con datos para que refinar los resultados de buscadores como Google? ¿Has escuchado sobre Schema.org  pero no te queda claro qué es eso y qué beneficios podría traer para tu negocio?',35,3,'/img/talks/evento-datos-estructurados-seo.jpg','/img/talks/evento-datos-estructurados-seo.jpg','<p>Durante este taller estaremos revisando el concepto de &quot;<strong>fragmentos enriquecidos mediante datos estructurados</strong>&quot;, daremos un <strong>ejemplo pr&aacute;ctico de implementaci&oacute;n</strong> y revisaremos algo que se est&aacute; convirtiendo en un est&aacute;ndar.</p>','1996-03-03 01:30:45','1988-06-21 19:50:11','2018-08-03 04:07:03','2018-08-03 04:07:03'),(4,'Cómo usar Vue CLI','como-usar-vue-cli','Durante este taller estaremos revisando a detalle la versión más reciente de la Vue CLI, que nos permite optimizar nuestro flujo de trabajo con aplicaciones de Vue.',36,4,'/img/talks/vue-cli.png','/img/talks/vue-cli.png','<p>&iquest;As&iacute; que has escuchado hablar sobre <strong>programaci&oacute;n reactiva</strong> pero el concepto no te ha quedado claro? &iquest;Te gustar&iacute;a saber cu&aacute;l es la diferencia entre una <strong>Promesa</strong> y un <strong>Observable</strong>?</p>\n<p>&iquest;Quisieras comprender c&oacute;mo Angular hace uso de los famosos <em>streams</em>?</p>\n<p>En este taller estaremos revisando con detenimiento varios de los conceptos que a veces no son tan f&aacute;ciles de comprender. Ven y aprende los fundamentos que te permitir&aacute;n crear <strong>componentes reactivos </strong>en JavaScript.</p>','1997-09-29 06:40:20','1998-01-17 04:30:55','2018-08-03 04:07:03','2018-08-03 04:07:03'),(5,'REST APIs con Postman y HTTPie','rest-apis-con-postman-y-httpie','Durante este evento aprenderemos a utilizar estas interesantes herramientas para desarrollar y probar APIs.',37,5,'/img/talks/event-postman-httpie_.jpg','/img/talks/event-postman-httpie_.jpg','<p>Durante este evento aprenderemos a utilizar estas interesantes herramientas para desarrollar y probar APIs.</p>\n\n<ul>\n<li>Interfaz para enviar request, guardar respuestas, a&ntilde;adir test y crear flujos de trabajo.</li>\n<li>Historial de request</li>\n<li>Creaci&oacute;n de variables</li>\n<li>Creaci&oacute;n de Entornos</li>\n<li>Creaci&oacute;n de Collections</li>\n</ul>','1990-07-20 01:22:02','1987-10-16 06:10:52','2018-08-03 04:07:03','2018-08-03 04:07:03'),(6,'Creando un REST API con Node.js','creando-un-rest-api-con-nodejs','¿Has escuchado el concepto de REST API pero no te quedó claro para qué sirve y cómo puede ser utilizado para crear aplicaciones web o móviles? Durante este curso corto pero efectivo, estaremos revisando cómo crear un REST API completamente desde cero. Pasaremos por la revisión de dos excelentes lenguajes de descripción: RAML y SWAGGER. ',38,6,'/img/talks/event-restApi-nodejs.jpg','/img/talks/event-restApi-nodejs.jpg','<p>&iquest;Has escuchado el concepto de REST API pero no te qued&oacute; claro para qu&eacute; sirve y c&oacute;mo puede ser utilizado para crear aplicaciones web o m&oacute;viles? Durante este curso corto pero efectivo, estaremos revisando c&oacute;mo crear un REST API completamente desde cero. Pasaremos por la revisi&oacute;n de dos excelentes lenguajes de descripci&oacute;n: RAML y SWAGGER.&nbsp;</p>','2016-01-06 21:07:57','1981-10-27 10:26:38','2018-08-03 04:07:03','2018-08-03 04:07:03'),(7,'UNIX y GNU/Linux para Desarrolladores Front-end','comandos-de-unix-para-desarrolladores-front-end','Un sistema de plantillas puede darte una excelente forma generar vistas dinámicas, no requieren un framework tan grande para poder funcionar y puede ayudarte a separar tu proyecto de front-end en capas. Durante este curso aprenderemos cómo instalar un template system, como integrarlo a una aplicación de Vanilla JavaScript y conceptos avanzados como helpers y rendering asíncrono.',39,7,'/img/talks/event-comandos-unix.jpg','/img/talks/event-comandos-unix.jpg','<p>Hoy por hoy los sistemas basados en UNIX se han vuelto de los favoritos para creaci&oacute;n de aplicaciones de front-end. Durante este curso estaremos revisando algunos de los comandos que puede ayudarte a hacer m&aacute;s eficiente tu flujo de trabajo como desarrollador de aplicaciones. No necesitas, ser un <strong><em>hacker</em></strong> para poder dominar las bases de <strong>UNIX</strong>, s&oacute;lo un poco de estudio y mucha pr&aacute;ctica. Ven y aclara tus dudas sobre este poderoso sistema operativo.</p>','1976-07-16 06:52:35','2017-03-07 14:56:55','2018-08-03 04:07:03','2018-08-03 04:07:03'),(8,'Template Systems en JavaScript (Handlebars, Dust.js)','template-systems-en-javascript-handlebars-dustjs','Un sistema de plantillas puede darte una excelente forma generar vistas dinámicas, no requieren un framework tan grande para poder funcionar y puede ayudarte a separar tu proyecto de front-end en capas. Durante este curso aprenderemos cómo instalar un template system, como integrarlo a una aplicación de Vanilla JavaScript y conceptos avanzados como helpers y rendering asíncrono.',40,8,'/img/talks/event-template-system-javascript.jpg','/img/talks/event-template-system-javascript.jpg','<p>Un sistema de plantillas puede darte una excelente forma generar vistas din&aacute;micas, no requieren un framework tan grande para poder funcionar y puede ayudarte a separar tu proyecto de front-end en capas. Durante este curso aprenderemos c&oacute;mo instalar un template system, como integrarlo a una aplicaci&oacute;n de Vanilla JavaScript y conceptos avanzados como helpers y rendering as&iacute;ncrono.</p>','1984-03-26 04:31:54','2004-10-29 01:20:52','2018-08-03 04:07:03','2018-08-03 04:07:03'),(9,'Angular vs Vue','angular-vs-vue','Durante esta sesión estaremos revisando dos excelentes frameworks para creación de aplicaciones front-end; en particular revisaremos a Angular (en su versión 4) y Vue.js, veremos pros y cons, cuándo usar uno u otro, cuál es la curva de aprendizaje, bajo qué circunstancias usarlos (o incluso cuándo y por qué elegir VanillaJs), cuánto me cuesta entrenarme en ellos y qué debo buscar para poder iniciar. Asimismo, revisaremos casos de éxito de ambos frameworks y su estado actual',41,9,'/img/talks/event-angular-vs-vue.jpg','/img/talks/event-angular-vs-vue.jpg','<p>Durante esta sesi&oacute;n estaremos revisando dos excelentes frameworks para creaci&oacute;n de aplicaciones front-end; en particular revisaremos a <strong>Angular </strong>(en su versi&oacute;n 4) y <strong>Vue.js</strong>, veremos pros y cons, cu&aacute;ndo usar uno u otro, cu&aacute;l es la curva de aprendizaje, bajo qu&eacute; circunstancias usarlos (o incluso cu&aacute;ndo y por qu&eacute; elegir VanillaJs), cu&aacute;nto me cuesta entrenarme en ellos y qu&eacute; debo buscar para poder iniciar. Asimismo, revisaremos casos de &eacute;xito de ambos frameworks y su estado actual.</p><p>Adem&aacute;s; explicaremos conceptos referentes a todo el ecosistema front-end como:</p><ul>	<li>Module loaders / bundlers: webpack, JSPM, rollup.</li>	<li>Gestores de dependencias.</li>	<li>Transpiles/compilers: TypeScript</li>	<li>Plataformas para versionamiento de c&oacute;digo</li>	<li>Y m&aacute;s...</li></ul>','2009-02-05 20:15:01','2000-04-01 00:59:52','2018-08-03 04:07:03','2018-08-03 04:07:03'),(10,'Programación Funcional con JavaScript','programacion-funcional-con-javascript','Revisaremos los fundamentos de este interesante paradigma de programación usando el lenguaje JavaScript. Aprenderemos sobre cómo usar diferentes funciones disponibles para manipulación de arreglos y además conceptos como: Inmutabilidad, Closure, Pure Functions y mucho más.',42,10,'/img/talks/evento-programacion-funcional.png','/img/talks/evento-programacion-funcional.png','<p>Revisaremos los fundamentos de este interesante paradigma de programaci&oacute;n usando el lenguaje JavaScript. Aprenderemos sobre c&oacute;mo usar diferentes funciones disponibles para manipulaci&oacute;n de arreglos y adem&aacute;s conceptos como: Inmutabilidad, Closure, Pure Functions y mucho m&aacute;s.</p>','2018-01-25 15:53:38','1990-01-20 15:57:45','2018-08-03 04:07:03','2018-08-03 04:07:03');
+INSERT INTO `talks` VALUES (1,'Observables con JavaScript','observables-con-javascript','¿Así que has escuchado hablar sobre programación reactiva pero el concepto no te ha quedado claro? ¿Te gustaría saber cuál es la diferencia entre una Promesa y un Observable? ¿Quisieras comprender cómo Angular hace uso de los famosos streams?',33,1,'/img/talks/observables-javascript.jpg','/img/talks/observables-javascript.jpg','¿Así que has escuchado hablar sobre programación reactiva pero el concepto no te ha quedado claro? ¿Te gustaría saber cuál es la diferencia entre una Promesa y un Observable? ¿Quisieras comprender cómo Angular hace uso de los famosos streams?','2018-11-01 09:00:00','2018-11-01 10:00:00','2018-08-03 04:07:03','2018-08-03 04:07:03'),(2,'Herramientas Profesionales para Desarrollo Front-end','herramientas-profesionales-para-desarrollo-front-end','¿Has escuchado hablar de compresión de código fuente, compilación, pre-procesadores, optimización de imágenes y cosas por el estilo? Pues bien, durante este curso aprenderás las herramientas preferidas por los desarrolladores front-end profesionales, Gulp.js, NPM, Bower, Uglify y mucho mucho más.',34,2,'/img/talks/event-herramientas-profesionales.jpg','/img/talks/event-herramientas-profesionales.jpg','<p>&iquest;Has escuchado hablar de compresi&oacute;n de c&oacute;digo fuente, compilaci&oacute;n, pre-procesadores, optimizaci&oacute;n de im&aacute;genes y cosas por el estilo? Pues bien, durante este curso aprender&aacute;s las herramientas preferidas por los desarrolladores front-end profesionales, Gulp.js, NPM, Bower, Uglify y mucho mucho m&aacute;s.</p>','2018-11-01 10:00:00','2018-11-01 11:00:00','2018-08-03 04:07:03','2018-08-03 04:07:03'),(3,'Datos Estructurados para SEO','datos-estructurados-para-seo','¿Te has preguntado cómo le hacen los buscadores para encontrar información? ¿cómo podrías enriquecer tu sitio con datos para que refinar los resultados de buscadores como Google? ¿Has escuchado sobre Schema.org  pero no te queda claro qué es eso y qué beneficios podría traer para tu negocio?',35,3,'/img/talks/evento-datos-estructurados-seo.jpg','/img/talks/evento-datos-estructurados-seo.jpg','<p>Durante este taller estaremos revisando el concepto de &quot;<strong>fragmentos enriquecidos mediante datos estructurados</strong>&quot;, daremos un <strong>ejemplo pr&aacute;ctico de implementaci&oacute;n</strong> y revisaremos algo que se est&aacute; convirtiendo en un est&aacute;ndar.</p>','2018-11-01 11:00:00','2018-11-01 12:00:00','2018-08-03 04:07:03','2018-08-03 04:07:03'),(4,'Cómo usar Vue CLI','como-usar-vue-cli','Durante este taller estaremos revisando a detalle la versión más reciente de la Vue CLI, que nos permite optimizar nuestro flujo de trabajo con aplicaciones de Vue.',36,4,'/img/talks/vue-cli.png','/img/talks/vue-cli.png','<p>&iquest;As&iacute; que has escuchado hablar sobre <strong>programaci&oacute;n reactiva</strong> pero el concepto no te ha quedado claro? &iquest;Te gustar&iacute;a saber cu&aacute;l es la diferencia entre una <strong>Promesa</strong> y un <strong>Observable</strong>?</p>\n<p>&iquest;Quisieras comprender c&oacute;mo Angular hace uso de los famosos <em>streams</em>?</p>\n<p>En este taller estaremos revisando con detenimiento varios de los conceptos que a veces no son tan f&aacute;ciles de comprender. Ven y aprende los fundamentos que te permitir&aacute;n crear <strong>componentes reactivos </strong>en JavaScript.</p>','2018-11-01 12:00:00','2018-11-01 13:00:00','2018-08-03 04:07:03','2018-08-03 04:07:03'),(5,'REST APIs con Postman y HTTPie','rest-apis-con-postman-y-httpie','Durante este evento aprenderemos a utilizar estas interesantes herramientas para desarrollar y probar APIs.',37,5,'/img/talks/event-postman-httpie_.jpg','/img/talks/event-postman-httpie_.jpg','<p>Durante este evento aprenderemos a utilizar estas interesantes herramientas para desarrollar y probar APIs.</p>\n\n<ul>\n<li>Interfaz para enviar request, guardar respuestas, a&ntilde;adir test y crear flujos de trabajo.</li>\n<li>Historial de request</li>\n<li>Creaci&oacute;n de variables</li>\n<li>Creaci&oacute;n de Entornos</li>\n<li>Creaci&oacute;n de Collections</li>\n</ul>','2018-11-01 13:00:00','2018-11-01 14:00:00','2018-08-03 04:07:03','2018-08-03 04:07:03'),(6,'Creando un REST API con Node.js','creando-un-rest-api-con-nodejs','¿Has escuchado el concepto de REST API pero no te quedó claro para qué sirve y cómo puede ser utilizado para crear aplicaciones web o móviles? Durante este curso corto pero efectivo, estaremos revisando cómo crear un REST API completamente desde cero. Pasaremos por la revisión de dos excelentes lenguajes de descripción: RAML y SWAGGER. ',38,6,'/img/talks/event-restApi-nodejs.jpg','/img/talks/event-restApi-nodejs.jpg','<p>&iquest;Has escuchado el concepto de REST API pero no te qued&oacute; claro para qu&eacute; sirve y c&oacute;mo puede ser utilizado para crear aplicaciones web o m&oacute;viles? Durante este curso corto pero efectivo, estaremos revisando c&oacute;mo crear un REST API completamente desde cero. Pasaremos por la revisi&oacute;n de dos excelentes lenguajes de descripci&oacute;n: RAML y SWAGGER.&nbsp;</p>','2018-11-02 09:00:00','2018-11-02 10:00:00','2018-08-03 04:07:03','2018-08-03 04:07:03'),(7,'UNIX y GNU/Linux para Desarrolladores Front-end','comandos-de-unix-para-desarrolladores-front-end','Un sistema de plantillas puede darte una excelente forma generar vistas dinámicas, no requieren un framework tan grande para poder funcionar y puede ayudarte a separar tu proyecto de front-end en capas. Durante este curso aprenderemos cómo instalar un template system, como integrarlo a una aplicación de Vanilla JavaScript y conceptos avanzados como helpers y rendering asíncrono.',39,7,'/img/talks/event-comandos-unix.jpg','/img/talks/event-comandos-unix.jpg','<p>Hoy por hoy los sistemas basados en UNIX se han vuelto de los favoritos para creaci&oacute;n de aplicaciones de front-end. Durante este curso estaremos revisando algunos de los comandos que puede ayudarte a hacer m&aacute;s eficiente tu flujo de trabajo como desarrollador de aplicaciones. No necesitas, ser un <strong><em>hacker</em></strong> para poder dominar las bases de <strong>UNIX</strong>, s&oacute;lo un poco de estudio y mucha pr&aacute;ctica. Ven y aclara tus dudas sobre este poderoso sistema operativo.</p>','2018-11-02 10:00:00','2018-11-02 11:00:00','2018-08-03 04:07:03','2018-08-03 04:07:03'),(8,'Template Systems en JavaScript (Handlebars, Dust.js)','template-systems-en-javascript-handlebars-dustjs','Un sistema de plantillas puede darte una excelente forma generar vistas dinámicas, no requieren un framework tan grande para poder funcionar y puede ayudarte a separar tu proyecto de front-end en capas. Durante este curso aprenderemos cómo instalar un template system, como integrarlo a una aplicación de Vanilla JavaScript y conceptos avanzados como helpers y rendering asíncrono.',40,8,'/img/talks/event-template-system-javascript.jpg','/img/talks/event-template-system-javascript.jpg','<p>Un sistema de plantillas puede darte una excelente forma generar vistas din&aacute;micas, no requieren un framework tan grande para poder funcionar y puede ayudarte a separar tu proyecto de front-end en capas. Durante este curso aprenderemos c&oacute;mo instalar un template system, como integrarlo a una aplicaci&oacute;n de Vanilla JavaScript y conceptos avanzados como helpers y rendering as&iacute;ncrono.</p>','2018-11-02 11:00:00','2018-11-02 12:00:00','2018-08-03 04:07:03','2018-08-03 04:07:03'),(9,'Angular vs Vue','angular-vs-vue','Durante esta sesión estaremos revisando dos excelentes frameworks para creación de aplicaciones front-end; en particular revisaremos a Angular (en su versión 4) y Vue.js, veremos pros y cons, cuándo usar uno u otro, cuál es la curva de aprendizaje, bajo qué circunstancias usarlos (o incluso cuándo y por qué elegir VanillaJs), cuánto me cuesta entrenarme en ellos y qué debo buscar para poder iniciar. Asimismo, revisaremos casos de éxito de ambos frameworks y su estado actual',41,9,'/img/talks/event-angular-vs-vue.jpg','/img/talks/event-angular-vs-vue.jpg','<p>Durante esta sesi&oacute;n estaremos revisando dos excelentes frameworks para creaci&oacute;n de aplicaciones front-end; en particular revisaremos a <strong>Angular </strong>(en su versi&oacute;n 4) y <strong>Vue.js</strong>, veremos pros y cons, cu&aacute;ndo usar uno u otro, cu&aacute;l es la curva de aprendizaje, bajo qu&eacute; circunstancias usarlos (o incluso cu&aacute;ndo y por qu&eacute; elegir VanillaJs), cu&aacute;nto me cuesta entrenarme en ellos y qu&eacute; debo buscar para poder iniciar. Asimismo, revisaremos casos de &eacute;xito de ambos frameworks y su estado actual.</p><p>Adem&aacute;s; explicaremos conceptos referentes a todo el ecosistema front-end como:</p><ul>	<li>Module loaders / bundlers: webpack, JSPM, rollup.</li>	<li>Gestores de dependencias.</li>	<li>Transpiles/compilers: TypeScript</li>	<li>Plataformas para versionamiento de c&oacute;digo</li>	<li>Y m&aacute;s...</li></ul>','2018-11-02 12:00:00','2018-11-02 13:00:00','2018-08-03 04:07:03','2018-08-03 04:07:03'),(10,'Programación Funcional con JavaScript','programacion-funcional-con-javascript','Revisaremos los fundamentos de este interesante paradigma de programación usando el lenguaje JavaScript. Aprenderemos sobre cómo usar diferentes funciones disponibles para manipulación de arreglos y además conceptos como: Inmutabilidad, Closure, Pure Functions y mucho más.',42,10,'/img/talks/evento-programacion-funcional.png','/img/talks/evento-programacion-funcional.png','<p>Revisaremos los fundamentos de este interesante paradigma de programaci&oacute;n usando el lenguaje JavaScript. Aprenderemos sobre c&oacute;mo usar diferentes funciones disponibles para manipulaci&oacute;n de arreglos y adem&aacute;s conceptos como: Inmutabilidad, Closure, Pure Functions y mucho m&aacute;s.</p>','2018-11-02 13:00:00','2018-11-02 14:00:00','2018-08-03 04:07:03','2018-08-03 04:07:03');
 /*!40000 ALTER TABLE `talks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,7 +203,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -205,4 +236,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-08-03 18:10:36
+-- Dump completed on 2019-04-09 13:48:30
